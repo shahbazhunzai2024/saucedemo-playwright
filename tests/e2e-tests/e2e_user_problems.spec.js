@@ -260,6 +260,6 @@ test.skip('cart page validations', async ({ page }) => {
   });
 
 });
-
+//Test Engs skipped - can be activated as needed
 
 });
