@@ -1,6 +1,7 @@
 class cartPage{
 
-    constructor(page){
+    constructor(page)
+    {
         this.page = page;
     }
 
@@ -16,29 +17,21 @@ class cartPage{
     }
 
 
-    async calculateCheckoutValues(productArr){
+    async calculateCheckoutValues(products) {
+        let total = 0.00;
+        let taxRate = 1.08002667;
 
-        let finalValues = []
-        let totalBeforeTax = 0.00;
-
-        for(let i=0; i<productArr.length; i++){
-
-            let var1 = parseFloat(totalBeforeTax)
-            let var2 = parseFloat(productArr[i])
-
-            totalBeforeTax = var1 + var2
+        for (let product of products) {
+            total += parseFloat(product);
         }
 
-        var taxConstant =  1.08002667
-        var tax = (totalBeforeTax * taxConstant) - totalBeforeTax
-        var totalAfterTax = totalBeforeTax + tax
+        let tax = (total * taxRate) - total;
+        let totalWithTax = total + tax;
 
-        var finalNumBeforeTax = totalBeforeTax.toFixed(2)
-        var finalTax = tax.toFixed(2)
-        var finalTotalAfterTax = totalAfterTax.toFixed(2)
-        
-        finalValues.push(finalNumBeforeTax, finalTax, finalTotalAfterTax)
-        return finalValues
+        let finalValues = [];
+        finalValues.push(total.toFixed(2), tax.toFixed(2), totalWithTax.toFixed(2));
+
+        return finalValues;
     }
 
 }

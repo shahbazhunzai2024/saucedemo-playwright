@@ -8,7 +8,7 @@ test.describe('SauceDemo - Login Page', () => {
 
     test.beforeEach(async({page}) => {
         LoginPage = new loginPage(page);
-        await page.goto('https://www.saucedemo.com/');
+        await page.goto(testData.URL);
     });
 
     test('successful login to saucedemo - standard user', async ({ page }) => {
@@ -47,7 +47,6 @@ test.describe('SauceDemo - Login Page', () => {
       //error handling through matcher negating, since we failed to login we should not see the hamburger menu
       await expect(page.locator('[id="react-burger-menu-btn"]')).not.toBeVisible()
     });
-
     //empty password field
     test('login failure to saucedemo - empty password failure', async ({ page }) => {
       await LoginPage.login('standard_user', '');

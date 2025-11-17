@@ -4,15 +4,16 @@ const homePage = require('../../pages/homePage');
 const cartPage = require('../../pages/cartPage');
 const testData = require('../../data/testData.json')
 
-test.describe('SauceDemo - Login Page', () => {
+test.describe('SauceDemo - Cart Page', () => {
 
   let LoginPage, HomePage, CartPage;
 
   test.beforeEach('fresh page and login before each test', async({page}) => {
-    LoginPage = new loginPage(page);
-    HomePage = new homePage(page);
+    LoginPage = new loginPage(page); 
+    HomePage = new homePage(page); 
     CartPage = new cartPage(page);
-    await page.goto('https://www.saucedemo.com/');
+
+    await page.goto(testData.URL);
     await LoginPage.login('standard_user', 'secret_sauce')
     await expect(page.locator('[id="react-burger-menu-btn"]')).toBeVisible()
 });

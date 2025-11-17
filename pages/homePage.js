@@ -1,6 +1,7 @@
 class homePage{
 
-    constructor(page){
+    constructor(page)
+    {
         this.page = page;
     }
 

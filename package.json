@@ -1,7 +1,7 @@
 {
   "name": "saucedemo-playwright",
   "version": "1.0.0",
-  "description": "",
+  "description": "- Playwright + js on saucelabs test domain for CPH 2024",
   "main": "index.js",
   "scripts": {
     "test": "npx playwright test",
@@ -20,7 +20,10 @@
   },
   "homepage": "https://github.com/RahulxRamesh/saucedemo-playwright#readme",
   "devDependencies": {
-    "@playwright/test": "^1.46.0",
+    "@playwright/test": "^1.56.1",
     "@types/node": "^22.3.0"
+  },
+  "directories": {
+    "test": "tests"
   }
 }
